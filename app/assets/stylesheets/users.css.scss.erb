@@ -1,0 +1,66 @@
+@import "bootstrap";
+
+.container {
+	width: 350px;
+    margin: 0 auto;
+}
+
+.head-text {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+body {
+	background: url(<%= asset_path("background.png") %>);
+}
+
+.register {
+    width: 350px;
+    margin: 0 auto;
+}
+
+.register-head {
+    background: -moz-linear-gradient(top, #5587bf, #3863a0);
+    text-align: left;
+    border: 1px solid #000000;
+    font-size: 16px;
+    color: #ffffff;
+    padding-left: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.register-form {
+    background: -moz-linear-gradient(top, #B0C4DE, #D3D3D3);
+    border: 1px solid #000000;
+    border-top: 0;
+    font-size: 16px;
+    color: #000000;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+.register-form p {
+    margin: 0;
+}
+
+.text-sign-up {
+    float: right;
+    display: inline;
+    margin-right: 7px;
+    margin-top: 7px;
+}
+
+#error_explanation {
+  color: #f00;
+  margin-right: 5px;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
