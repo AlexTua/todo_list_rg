@@ -7,6 +7,9 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
+  <% if signed_in? %>
+    <%= button_to "Sign out", signout_path, method: "delete", class: "btn btn-warning btn-small"%>
+  <% end %>
   <div class="container">
     <div class="head-text text-center">
       <h2><b>SIMPLE TODO LISTS</b></h2>

@@ -12,11 +12,12 @@
 
       <%= f.label :password %>
       <%= f.password_field :password %>
+
         <div calss="controls">
           <%= f.submit "Sign-up", class: "btn btn-default btn-success" %>
           <span class="text-sign-up">
             Have an Account?
-            <%= link_to "Sign in", "#" %>
+            <%= link_to "Sign in", root_url %>
           </span>
         </div>
       <% end %>

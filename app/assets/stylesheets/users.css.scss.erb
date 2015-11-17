@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 .container {
-	width: 350px;
+	width: 650px;
     margin: 0 auto;
 }
 
@@ -12,15 +12,15 @@
 
 body {
 	background: url(<%= asset_path("background.png") %>);
+    background: contain;
 }
 
 .register {
     width: 350px;
-    margin: 0 auto;
+    margin: auto;
 }
 
 .register-head {
-    background: -moz-linear-gradient(top, #5587bf, #3863a0);
     text-align: left;
     border: 1px solid #000000;
     font-size: 16px;
@@ -28,16 +28,25 @@ body {
     padding-left: 7px;
     padding-top: 7px;
     padding-bottom: 7px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5587bf), to(#3863a0));
+    background: -webkit-linear-gradient(top, #5587bf, #3863a0);
+    background: -moz-linear-gradient(top, #5587bf, #3863a0);
+    background: -ms-linear-gradient(top, #5587bf, #3863a0);
+    background: -o-linear-gradient(top, #5587bf, #3863a0);
 }
 
 .register-form {
-    background: -moz-linear-gradient(top, #B0C4DE, #D3D3D3);
     border: 1px solid #000000;
     border-top: 0;
     font-size: 16px;
     color: #000000;
     padding-left: 5px;
-    padding-top: 5px;
+    padding-top: 9px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#B0C4DE), to(#D3D3D3));
+    background: -webkit-linear-gradient(top, #B0C4DE, #D3D3D3);
+    background: -moz-linear-gradient(top, #B0C4DE, #D3D3D3);
+    background: -ms-linear-gradient(top, #B0C4DE, #D3D3D3);
+    background: -o-linear-gradient(top, #B0C4DE, #D3D3D3);
 }
 
 .register-form p {
@@ -63,4 +72,59 @@ body {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+.todo {
+    width: 650px;
+    margin-left: 0px;
+}
+
+.todo-project-name {
+    text-align: left;
+    border: 1px solid #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    font-size: 18px;
+    color: #ffffff;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#5587bf), to(#3863a0));
+    background: -webkit-linear-gradient(top, #5587bf, #3863a0);
+    background: -moz-linear-gradient(top, #5587bf, #3863a0);
+    background: -ms-linear-gradient(top, #5587bf, #3863a0);
+    background: -o-linear-gradient(top, #5587bf, #3863a0);
+}
+
+.todo-head {
+    border: 1px solid #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-top: 0;
+    font-size: 18px;
+    color: #000000;
+    padding-top: 4px;
+    padding-left: 15px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#DCDCDC), to(#BEBEBE));
+    background: -webkit-linear-gradient(top, #DCDCDC, #BEBEBE);
+    background: -moz-linear-gradient(top, #DCDCDC, #BEBEBE);
+    background: -ms-linear-gradient(top, #DCDCDC, #BEBEBE);
+    background: -o-linear-gradient(top, #DCDCDC, #BEBEBE);
+}
+
+.fix-icon-left{
+    margin-right: 15px; 
+    margin-left: 7px; 
+    color: rgba(0, 0, 0, 1);
+}
+
+.fix-icon-right {
+    float: right;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+#icon-plus {
+    color: rgba(33, 129, 14, 0.8);
+    margin-left: 5px;
+    margin-right: 15px;
 }
