@@ -1,0 +1,10 @@
+<% @projects.each do |value| %>
+    <%=render 'ui/project', value: value %>
+<% end %>
+
+<div class="div-add">
+	<%= button_to "ui/create", class: "btn-add" do %>
+		<i class="fa fa-plus fa-lg" id="icon-plus"></i> 
+		<b>Add TODO List</b>
+	<% end %>
+</div>
