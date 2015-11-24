@@ -34,6 +34,6 @@ class UiController < ApplicationController
     @project.update_attributes(:name => params[:name])
      respond_to do |format|
         format.js
-    end
+     end
   end
 end
