@@ -26,9 +26,8 @@ class UiController < ApplicationController
   
   def update
     @list=current_user.projects.find(params[:id])
-    if @list.update_attributes(:name => params[:name])
- 
-    end
+    @list.update_attributes(:name => params[:name])
+    redirect_to root_url
 
   end
 end
