@@ -7,27 +7,33 @@ class UiController < ApplicationController
 
   def create 
   	if current_user.projects.create!(name: "New list")
-  		redirect_to root_url
+    @project=current_user.projects.first
+  		respond_to do |format|
+        format.js
+      end
   	end
   end
 
   def destroy
   	if current_user.projects.find(params[:id]).destroy
-  		redirect_to root_url
+  		respond_to do |format|
+        format.js
+      end
   	end
   end
 
   def edit
-    @list=current_user.projects.find(params[:id])
+    @project=current_user.projects.find(params[:id])
       respond_to do |format|
         format.js
       end
   end
   
   def update
-    @list=current_user.projects.find(params[:id])
-    @list.update_attributes(:name => params[:name])
-    redirect_to root_url
-
+    @project=current_user.projects.find(params[:id])
+    @project.update_attributes(:name => params[:name])
+     respond_to do |format|
+        format.js
+    end
   end
 end

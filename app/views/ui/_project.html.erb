@@ -1,10 +1,14 @@
-<div class="todo">
-    <div class="todo-project-name">
+<div class="todo", id="project<%= value.id %>">
+    <div class="todo-project-name" id="change-name<%= value.id %>">
     	<i class="fa fa-calendar fix-icon-left"></i>
     	<%= value.name %>
-    	<%=link_to "ui/destroy/#{value.id}",  method: :delete do%><i class="fa fa-trash fix-icon-right clr-red"></i><%end%>
+    	<%=link_to "ui/destroy/#{value.id}", :remote => true,  method: :delete do%>
+            <i class="fa fa-trash fix-icon-right clr-red"></i>
+        <%end%>
     	<span class="line">|</span>
-    	<%=link_to "ui/edit/#{value.id}", :remote => true do %><i class="fa fa-pencil fix-icon-right clr-green"></i><%end%>
+    	<%=link_to "ui/edit/#{value.id}", :remote => true do %>
+            <i class="fa fa-pencil fix-icon-right clr-green"></i>
+        <%end%>
     </div>
     <div class="todo-head"> <!--<i class="fa fa-plus fa-2x fix-icon-left" id="icon-plus"></i> иконка плюса-->
         <div class="input-append">

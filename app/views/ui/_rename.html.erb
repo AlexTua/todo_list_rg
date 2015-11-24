@@ -1,7 +1,9 @@
-<i class="fa fa-calendar fix-icon-left"></i>
-<%= form_tag("ui/update/#{value.id}", remote: true, method: :patch, style: "display: inline;") do %>
+<i class="fa fa-calendar fix-icon-left" style="position: absolute;"></i>
+<%= form_tag("ui/update/#{value.id}", :remote => true, method: :patch, style: "display: inline;") do %>
     <%= text_field_tag "name", value.name, class: "rename" %>
-    <%=link_to root_url do%><i class="fa fa-close fix-icon-right clr-red"></i><%end%>
+    <%=link_to root_url do%>
+    	<i class="fa fa-close fix-icon-right clr-red"></i>
+    <%end%>
     <span class="line">|</span>
-    <%=link_to "ui/update/#{value.id}", method: :patch do %><i class="fa fa-check fix-icon-right clr-green"></i><%end%>
+    <%= button_tag "", class: "fa fa-check fix-icon-right clr-green btn-rename" %>
 <%end%>
