@@ -1,6 +1,6 @@
-<div class="task" id="task<%= task.id %>">
+<div id="task<%= task.id %>" class="task <%= "last" if value.tasks.last == task%>">
     <div class="checkbox">
-        <%= check_box_tag(:task_status) %>
+        <input type="checkbox" style="margin-left: 4px;">
     </div>
     <div class="task-text" id="task-text<%=task.id%>">
     	<%=task.name %>

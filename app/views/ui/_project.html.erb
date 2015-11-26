@@ -22,7 +22,7 @@
     <div id="project-tasks<%= value.id %>">
         <% tasks.each do |task| %>
             <% if task.project_id == value.id %>
-                <%= render('tasks/task', task: task) %>
+                <%= render('tasks/task', value: value, task: task) %>
             <% end %>
         <% end %>
     </div>

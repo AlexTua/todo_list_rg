@@ -2,9 +2,9 @@ class UiController < ApplicationController
   before_action :signed_in_user
 
   def index
-  	  @projects=current_user.projects.all
-      @tasks=current_user.tasks.all
-      @task_new=current_user.tasks.new
+  	@projects=current_user.projects.all
+    @tasks=current_user.tasks.all
+    @task_new=current_user.tasks.new
   end
 
   def create 
