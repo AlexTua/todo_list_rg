@@ -239,6 +239,7 @@ body {
     width: 455px;
     word-wrap: break-word;
     min-height: 32px;
+    text-align: left;
 }
 
 .task-edit {
@@ -247,6 +248,10 @@ body {
     float: left;
     width: 112px;
     height: 52px;
+}
+
+.clr-gray {
+    color: #FFFFFF;
 }
 
 .task:hover {
@@ -259,4 +264,40 @@ body {
     -moz-transition-delay: 0.2s;
     transition: 0.2s ease-out;
     transition-delay: 0.2s;
+    .clr-gray {
+        -webkit-transition: 0.2s ease-out;
+        -webkit-transition-delay: 0.2s;
+        -o-transition: 0.2s ease-out;
+        -o-transition-delay: 0.2s;
+        -moz-transition: 0.2s ease-out;
+        -moz-transition-delay: 0.2s;
+        transition: 0.2s ease-out;
+        transition-delay: 0.2s;
+        color: #696969;
+    }
+}
+
+.line-edit {
+    margin-left: 9px;
+    margin-top: 21px;
+    font-size: 20px;
+}
+
+.fix-edit-icons {
+    color: rgba(255, 255, 255, 1);
+    margin-left: 24px;
+    cursor: pointer;
+    margin-top: 19px;
+}
+
+.task-rename {
+    padding: 0px;
+    width: 400px;
+}
+
+.btn-task-rename {
+    margin-top: 7px;
+    color: #000;
+    border: none;
+    background-color: transparent;
 }

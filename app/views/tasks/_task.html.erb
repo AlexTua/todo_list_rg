@@ -1,7 +1,17 @@
-<div class="task">
+<div class="task" id="task<%= task.id %>">
     <div class="checkbox">
         <%= check_box_tag(:task_status) %>
     </div>
-    <div class="task-text"><%=task.name %></div>
-    <div class="task-edit"></div>
+    <div class="task-text" id="task-text<%=task.id%>">
+    	<%=task.name %>
+    </div>
+    <div class="task-edit">
+      	<%=link_to "tasks/edit/#{task.id}", :remote => true do %>
+            <i class="fa fa-lg fa-pencil fix-edit-icons clr-gray"></i>
+        <%end%>
+    	<span class="line-edit clr-gray">|</span>
+        <%=link_to "tasks/#{task.id}", :remote => true, method: :delete do%>
+            <i class="fa fa-lg fa-trash fix-edit-icons clr-gray", style="margin-left: 10px;"></i>
+        <%end%>
+    </div>
 </div>
