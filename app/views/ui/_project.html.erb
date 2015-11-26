@@ -12,8 +12,18 @@
     </div>
     <div class="todo-head"> <!--<i class="fa fa-plus fa-2x fix-icon-left" id="icon-plus"></i> иконка плюса-->
         <div class="input-append">
-            <input class="span7" id="appendedInputButton" type="text">
-            <button class="btn btn-success" type="button">Add Task</button>
+            <%= form_for(@task_new, :remote => true) do |f| %>
+                <%= f.hidden_field(:project_id, value: "#{value.id}") %>
+                <%= f.text_field :name, class: "span7", placeholder: "Start typing here to create a task..." %>
+                <%= f.submit "Add Task", class: "btn btn-success" %>
+            <%end%>
         </div>
+    </div>
+    <div id="project-tasks<%= value.id %>">
+        <% tasks.each do |task| %>
+            <% if task.project_id == value.id %>
+                <%= render('tasks/task', task: task) %>
+            <% end %>
+        <% end %>
     </div>
 </div>

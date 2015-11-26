@@ -76,8 +76,12 @@ body {
 
 .todo {
     width: 650px;
-    margin-left: 0px;
     margin-bottom: 40px;
+    float: left;
+}
+
+#projects-show {
+    float: left;
 }
 
 .todo-project-name {
@@ -111,6 +115,7 @@ body {
     background: -moz-linear-gradient(top, #DCDCDC, #BEBEBE);
     background: -ms-linear-gradient(top, #DCDCDC, #BEBEBE);
     background: -o-linear-gradient(top, #DCDCDC, #BEBEBE);
+    height: 40px;
 }
 
 .fix-icon-left{
@@ -136,8 +141,7 @@ body {
 
 .div-add {
     width: 200px;
-    margin: auto;
-    margin-top: 50px;   
+    margin: auto;  
 }
 
 .btn-add {
@@ -199,7 +203,60 @@ body {
 }
 
 .btn-rename {
+    margin-right: 47px;
     width: 25px;
     border: none;
     background-color: transparent;
+}
+
+.task {
+    border: 1px solid #000000;
+    border-bottom: 1px solid #E6E6FA;
+    border-top: 0;
+    margin: 0 auto;
+    float: left;
+    background: #FFFFFF;
+    /*border-radius: 0 0 20px 20px;*/
+}
+
+.checkbox {
+    display: inline-block;
+    padding: 15px;
+    width: 22px;
+    border: 0;
+    float: left;
+}
+
+.task-text {
+    display: inline-block;
+    border-left: 7px double #E9967A;
+    border-right: 2px solid #E6E6FA;
+    border-top: 0;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 13px;
+    float: left;
+    width: 455px;
+    word-wrap: break-word;
+    min-height: 32px;
+}
+
+.task-edit {
+    display: inline-block;
+    border: 0;
+    float: left;
+    width: 112px;
+    height: 52px;
+}
+
+.task:hover {
+    background: #FEF681;
+    -webkit-transition: 0.2s ease-out;
+    -webkit-transition-delay: 0.2s;
+    -o-transition: 0.2s ease-out;
+    -o-transition-delay: 0.2s;
+    -moz-transition: 0.2s ease-out;
+    -moz-transition-delay: 0.2s;
+    transition: 0.2s ease-out;
+    transition-delay: 0.2s;
 }

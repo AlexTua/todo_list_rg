@@ -4,7 +4,6 @@ class CreateTasks < ActiveRecord::Migration
       t.string  :name
       t.boolean :status, default: false
       t.integer :project_id
-      t.integer :user_id
 
       t.timestamps
     end

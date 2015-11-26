@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :ui, only: [:index, :create, :destroy, :edit, :update]
+  resources :tasks 
 
   root  'ui#index'	
   match '/signup',  		  to: 'users#new',             via: 'get'
