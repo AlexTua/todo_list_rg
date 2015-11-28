@@ -4,5 +4,5 @@ class Task < ActiveRecord::Base
 	default_scope -> { order('id DESC') }
 
 	#default_scope -> { order('created_at DESC') }
-	validates :name, presence: true, length: { maximum: 350 }
+	validates :name, presence: true, length: { minimum: 1, maximum: 350 }
 end
