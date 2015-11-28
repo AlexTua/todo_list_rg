@@ -27,7 +27,23 @@ class TasksController < ApplicationController
 		@task.update_attributes(:name => params[:name])
 		 respond_to do |format|
       	 	format.js
-     	end
+     	 end
+	end
+
+	def check
+		@task=current_user.tasks.find(params[:id])
+		@task.update_attributes(:status => true)
+		 respond_to do |format|
+      	 	format.js
+     	 end
+	end
+
+	def uncheck
+		@task=current_user.tasks.find(params[:id])
+		@task.update_attributes(:status => false)
+		 respond_to do |format|
+      	 	format.js
+     	 end
 	end
 
 	private

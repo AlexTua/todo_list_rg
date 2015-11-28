@@ -8,34 +8,54 @@ class UiController < ApplicationController
   end
 
   def create 
-  	current_user.projects.create!(name: "New list")
-    @project=current_user.projects.first
-    @tasks=current_user.tasks.all
-    @task_new=current_user.tasks.new
+  	if current_user.projects.create!(name: "New list")
+      @project=current_user.projects.first
+      @tasks=current_user.tasks.all
+      @task_new=current_user.tasks.new
   		respond_to do |format|
         format.js
       end
+    else
+      respond_to do |format|
+        format.js {render 'errors/error'}
+      end
+    end
   end
 
   def destroy
-  	current_user.projects.find(params[:id]).destroy
+  	if current_user.projects.find(params[:id]).destroy
   		respond_to do |format|
         format.js
       end
+    else
+      respond_to do |format|
+        format.js {render 'errors/error'}
+      end
+    end
   end
 
   def edit
-    @project=current_user.projects.find(params[:id])
+    if @project=current_user.projects.find(params[:id])
       respond_to do |format|
         format.js
       end
+    else
+      respond_to do |format|
+        format.js {render 'errors/error'}
+      end
+    end
   end
   
   def update
     @project=current_user.projects.find(params[:id])
-    @project.update_attributes(:name => params[:name])
-     respond_to do |format|
+    if @project.update_attributes(:name => params[:name])
+      respond_to do |format|
         format.js
-     end
+      end
+    else
+      respond_to do |format|
+        format.js {render 'errors/prj_error'}
+      end
+    end
   end
 end

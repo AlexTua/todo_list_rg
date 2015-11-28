@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 
   def new
+    redirect_to root_url if signed_in?
   	@user = User.new
   end
 
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
       sign_in @user
-      redirect_to root_url 
+        redirect_to root_url 
   	else 
   		render 'new'
 	  end
